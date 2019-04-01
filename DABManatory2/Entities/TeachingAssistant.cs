@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BlackBoard.Entities
+namespace DABMandatory2.Entities
 {
     public class TeachingAssistant
     {
@@ -20,5 +20,6 @@ namespace BlackBoard.Entities
         public string Assistant_Or_Responsible { get; set; }
         //Assistant_OR_Responsible NVARCHAR(15) DEFAULT 'Assistant' NOT NULL
 
+        public Teacher Teacher { get; set; }
     }
 }
