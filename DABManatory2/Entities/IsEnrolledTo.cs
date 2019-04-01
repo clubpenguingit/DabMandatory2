@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BlackBoard.Entities
+namespace DABMandatory.Entities
 {
     public class IsEnrolledTo
     {
