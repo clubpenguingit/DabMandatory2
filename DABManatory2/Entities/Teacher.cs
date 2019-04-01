@@ -8,7 +8,10 @@ namespace DABMandatory2.Entities
         public string Teacher_ID { get; set; }
 
         [MaxLength(15)]
-        public string Assistant_Or_Responsible { get; set; }
+        public string AssistantOrResponsible { get; set; }
+
+        public TeachingAssistant TeachingAssistant { get; set; }
+        public CourseResponsible CourseResponsible { get; set; }
     }
 
 }
