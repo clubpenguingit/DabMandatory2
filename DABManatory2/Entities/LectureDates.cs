@@ -12,5 +12,7 @@ namespace DABMandatory2.Entities
         public string Course_ID { get; set; }
 
         public DateTime Lectures { get; set; }
+
+        public Calendar Calendar { get; set; }
     }
 }
