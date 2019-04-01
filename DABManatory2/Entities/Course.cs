@@ -9,5 +9,7 @@ namespace DABMandatory2.Entities
         [MaxLength(100)]
         public string Course_ID { get; set; }
         public List<Assignments> Assignments { get; set; }
+
+        public List<IsEnrolledTo> Enrollments { get; set; }
     }
 }
