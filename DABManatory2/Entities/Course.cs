@@ -1,10 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using DABMandatory2.Entities;
 
-namespace BlackBoard.Entities
+namespace DABMandatory2.Entities
 {
     public class Course
     {
         [MaxLength(100)]
-        public string CourseID { get; set; }
+        public string Course_ID { get; set; }
+        public List<Assignments> Assignments { get; set; }
+
+        public List<IsEnrolledTo> Enrollments { get; set; }
     }
 }

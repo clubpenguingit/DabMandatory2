@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using DABMandatory2.Entities;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace BlackBoard.Entities
+namespace DABMandatory2.Entities
 {
     public class CourseContent
     {

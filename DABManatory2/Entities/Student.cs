@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DABMandatory2.Entities
@@ -13,12 +14,15 @@ namespace DABMandatory2.Entities
         public DateTime Birthday { get; set; }
 
         [MaxLength(10)]
-        public string AuID { get; set; }
+        public string AU_ID { get; set; }
 
         [Required]
         public DateTime GraduationDate { get; set; }
 
         [Required]
         public DateTime EnrollmentDate { get; set; }
+
+        public List<Assignments> Assignments { get; set; }
+        public List<IsEnrolledTo> Enrollments { get; set; }
     }
 }

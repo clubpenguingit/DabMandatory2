@@ -1,14 +1,19 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using DABMandatory2.Entities;
 
-namespace BlackBoard.Entities
+namespace DABMandatory2.Entities
 {
     public class Teacher
     {
         [MaxLength(10)]
-        public string TeacherID { get; set; }
+        public string Teacher_ID { get; set; }
 
         [MaxLength(15)]
         public string AssistantOrResponsible { get; set; }
-    }
 
+        public Assignments Assignments    { get; set; }
+
+        public TeachingAssistant TeachingAssistant { get; set; }
+        public CourseResponsible CourseResponsible { get; set; }
+    }
 }
