@@ -10,6 +10,9 @@ namespace DABMandatory2.EntityConfigurations
         {
             builder.HasKey(c => new {c.Calendar_ID, c.Course_ID});
             
+            builder.HasOne(l => l.Calendar)
+                .WithMany(c => c.LectureDates)
+                .HasForeignKey(l => l.Calendar_ID);
         }
     }
 }
