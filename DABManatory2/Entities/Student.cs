@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BlackBoard.Entities
+namespace DABMandatory2.Entities
 {
     public class Student
     {
