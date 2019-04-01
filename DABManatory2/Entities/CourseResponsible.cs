@@ -6,8 +6,11 @@ namespace DABMandatory2.Entities
 {
     public class CourseResponsible
     {
+        [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+
+        [Required]
         public DateTime Birthday { get; set; }
 
         [MaxLength(10)]
@@ -17,6 +20,7 @@ namespace DABMandatory2.Entities
         public string Teacher_ID { get; set; }
 
         [MaxLength(15)]
+        [RegularExpression(@"Responsible|Assistant")]
         public string Assistant_Or_Responsible { get; set; }
 
         public Teacher Teacher { get; set; }

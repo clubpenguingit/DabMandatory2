@@ -27,13 +27,15 @@ namespace DABMandatory2.EntityConfigurations
             builder
                 .HasOne(t => t.Assignments)
                 .WithOne(t => t.Teacher)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder
                 .HasMany(t => t.IsAssignedTos)
                 .WithOne(t => t.Teacher)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
+
+
 
         }
     }

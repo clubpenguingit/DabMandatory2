@@ -9,7 +9,9 @@ namespace DABMandatory2.Entities
         [MaxLength(10)]
         public string Teacher_ID { get; set; }
 
+        [Required]
         [MaxLength(15)]
+        [RegularExpression(@"Assistant|Responsible")] 
         public string AssistantOrResponsible { get; set; }
 
         public Assignments Assignments    { get; set; }
