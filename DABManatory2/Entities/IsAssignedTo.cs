@@ -10,8 +10,8 @@ namespace DABMandatory2.Entities
         [MaxLength(10)]
         public string Teacher_ID { get; set; }
         
-        public Teacher Teacher { get; set; }
+        public virtual Teacher Teacher { get; set; }
 
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

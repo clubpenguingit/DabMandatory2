@@ -12,11 +12,11 @@ namespace DABMandatory2.Entities
         [MaxLength(15)]
         public string AssistantOrResponsible { get; set; }
 
-        public Assignments Assignments    { get; set; }
+        public virtual Assignments Assignments    { get; set; }
 
-        public TeachingAssistant TeachingAssistant { get; set; }
-        public CourseResponsible CourseResponsible { get; set; }
+        public virtual TeachingAssistant TeachingAssistant { get; set; }
+        public virtual CourseResponsible CourseResponsible { get; set; }
 
-        public List<IsAssignedTo> IsAssignedTos { get; set; }
+        public virtual List<IsAssignedTo> IsAssignedTos { get; set; }
     }
 }

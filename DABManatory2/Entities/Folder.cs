@@ -12,7 +12,7 @@ namespace DABMandatory2.Entities
         [MaxLength(50)]
         public string Content_ID { get; set; }
 
-        public CourseContent CourseContent { get; set; }
-        public List<ContentArea> ContentAreas { get; set; }
+        public virtual CourseContent CourseContent { get; set; }
+        public virtual List<ContentArea> ContentAreas { get; set; }
     }
 }

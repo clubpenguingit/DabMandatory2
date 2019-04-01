@@ -14,7 +14,7 @@ namespace DABMandatory2.Entities
         [MaxLength(10)]
         public string AU_ID { get; set; }
 
-        public Student Student { get; set; }
-        public Course Course { get; set; }
+        public virtual Student Student { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

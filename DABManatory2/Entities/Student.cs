@@ -22,7 +22,7 @@ namespace DABMandatory2.Entities
         [Required]
         public DateTime EnrollmentDate { get; set; }
 
-        public List<Assignments> Assignments { get; set; }
-        public List<IsEnrolledTo> Enrollments { get; set; }
+        public virtual List<Assignments> Assignments { get; set; }
+        public virtual List<IsEnrolledTo> Enrollments { get; set; }
     }
 }

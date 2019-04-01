@@ -8,6 +8,8 @@ namespace DABMandatory2.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<Course> builder)
         {
+            builder.HasKey(key => key.Course_ID);
+
             builder.HasMany( c => c.Assignments)
                 .WithOne(a => a.Course)
                 .OnDelete(DeleteBehavior.Cascade)

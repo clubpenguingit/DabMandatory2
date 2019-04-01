@@ -13,8 +13,8 @@ namespace DABMandatory2.Entities
         [MaxLength(100)]
         public string Course_ID { get; set; }
 
-        public List<Folder> Folders { get; set; }
+        public virtual List<Folder> Folders { get; set; }
         
-        public Course Course { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

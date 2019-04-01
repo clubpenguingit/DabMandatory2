@@ -13,6 +13,6 @@ namespace DABMandatory2.Entities
 
         public DateTime Lecture { get; set; }
 
-        public Calendar Calendar { get; set; }
+        public virtual Calendar Calendar { get; set; }
     }
 }

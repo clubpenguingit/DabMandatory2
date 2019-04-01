@@ -19,6 +19,6 @@ namespace DABMandatory2.Entities
         [MaxLength(15)]
         public string Assistant_Or_Responsible { get; set; }
 
-        public Teacher Teacher { get; set; }
+        public virtual Teacher Teacher { get; set; }
     }
 }

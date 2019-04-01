@@ -11,10 +11,10 @@ namespace DABMandatory2.Entities
         [MaxLength(100)]
         public string Course_ID { get; set; }
 
-        public Course Course { get; set; }
-        public List<HandIns> Handins { get; set; }
-        public List<Deadlines> Deadlines { get; set; }
-        public List<LectureDates> LectureDates { get; set; }
+        public virtual Course Course { get; set; }
+        public virtual List<HandIns> Handins { get; set; }
+        public virtual List<Deadlines> Deadlines { get; set; }
+        public virtual List<LectureDates> LectureDates { get; set; }
 
     }
 }
