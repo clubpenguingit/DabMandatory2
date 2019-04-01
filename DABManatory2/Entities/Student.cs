@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DABMandatory2.Entities
@@ -20,5 +21,8 @@ namespace DABMandatory2.Entities
 
         [Required]
         public DateTime EnrollmentDate { get; set; }
+
+
+        public List<Assignments> Assignments { get; set; }
     }
 }

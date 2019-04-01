@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using DABMandatory2.Entities;
 
 namespace DABMandatory2.Entities
 {
@@ -10,8 +11,9 @@ namespace DABMandatory2.Entities
         [MaxLength(15)]
         public string AssistantOrResponsible { get; set; }
 
+        public Assignments Assignments    { get; set; }
+
         public TeachingAssistant TeachingAssistant { get; set; }
         public CourseResponsible CourseResponsible { get; set; }
     }
-
 }
