@@ -10,5 +10,7 @@ namespace DABMandatory2.Entities
         [MaxLength(100)]
         public string Course_ID { get; set; }        
         public DateTime HandinDate { get; set; }
+
+        public Calendar Calendar { get; set; }
     }
 }
