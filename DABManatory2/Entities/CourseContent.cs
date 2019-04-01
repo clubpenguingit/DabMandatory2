@@ -14,5 +14,6 @@ namespace DABMandatory2.Entities
         public string Course_ID { get; set; }
 
         public List<Folder> Folders { get; set; }
+        
     }
 }
