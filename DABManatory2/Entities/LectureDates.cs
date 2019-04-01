@@ -14,6 +14,5 @@ namespace DABMandatory2.Entities
         public DateTime Lectures { get; set; }
 
         public Calendar Calendar { get; set; }
-
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace DABMandatory2.Entities
 {
@@ -9,6 +10,10 @@ namespace DABMandatory2.Entities
 
         [MaxLength(100)]
         public string Course_ID { get; set; }
+
+        public List<HandIns> Handins { get; set; }
+        public List<Deadlines> Deadlines { get; set; }
+        public List<LectureDates> LectureDates { get; set; }
 
     }
 }

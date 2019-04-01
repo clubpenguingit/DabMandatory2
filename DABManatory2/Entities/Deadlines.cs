@@ -12,6 +12,6 @@ namespace DABMandatory2.Entities
         public string Course_ID { get; set; }
         public DateTime DeadlineDate { get; set; }
 
-
+        public Calendar Calendar { get; set; }
     }
 }
