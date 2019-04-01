@@ -17,17 +17,17 @@ namespace DABMandatory2.EntityConfigurations
             builder
                 .HasOne(t => t.TeachingAssistant)
                 .WithOne(t => t.Teacher)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder
                 .HasOne(t => t.CourseResponsible)
                 .WithOne(t => t.Teacher)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder
                 .HasOne(t => t.Assignments)
                 .WithOne(t => t.Teacher)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder
                 .HasMany(t => t.IsAssignedTos)
