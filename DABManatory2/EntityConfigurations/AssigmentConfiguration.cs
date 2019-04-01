@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BlackBoard.Entities;
 using DABMandatory2.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -19,7 +18,7 @@ namespace DABMandatory2.EntityConfigurations
             builder.HasOne(a => a.Student)
                 .WithMany(s => s.Assignments)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey(s => s.AU_ID);
+                .HasForeignKey(a => a.AU_ID);
 
             // Foreign Key Course
             builder.HasOne(a => a.Course)
@@ -30,7 +29,7 @@ namespace DABMandatory2.EntityConfigurations
             // Foreign Key Teacher
             builder.HasOne(a => a.Teacher)
                 .WithOne(t => t.Assignments)
-                .OnDelete(DeleteBehavior.Cascade)
+                .OnDelete(DeleteBehavior.Restrict) 
                 .HasForeignKey<Teacher>( t => t.Teacher_ID);
         }
     }
