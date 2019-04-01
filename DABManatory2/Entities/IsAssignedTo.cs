@@ -11,5 +11,7 @@ namespace DABMandatory2.Entities
         public string Teacher_ID { get; set; }
         
         public Teacher Teacher { get; set; }
+
+        public Course Course { get; set; }
     }
 }

@@ -12,5 +12,7 @@ namespace DABMandatory2.Entities
 
         public List<IsEnrolledTo> Enrollments { get; set; }
         public Calendar Calendar { get; set; }
+        public List<IsAssignedTo> IsAssignedTos { get; set; }
+        public List<HandIns> HandIns { get; set; }
     }
 }
