@@ -21,8 +21,6 @@ namespace DABMandatory2.Entities
         public string Group_Signup { get; set; }
         [MaxLength(50)]
         public string Audio { get; set; }
-
-        public string Content_ID { get; set; }
         public Folder Folder { get; set; }
         
     }
