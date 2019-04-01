@@ -9,6 +9,6 @@ namespace DABMandatory2.Entities
         [MaxLength(100)]
         public string Course_ID { get; set; }
         [MaxLength(50)]
-        public string Contrent_ID { get; set; }
+        public string Content_ID { get; set; }
     }
 }
