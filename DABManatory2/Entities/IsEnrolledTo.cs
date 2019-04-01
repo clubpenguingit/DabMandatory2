@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using DABMandatory2.Entities;
 
-namespace DABMandatory.Entities
+namespace DABMandatory2.Entities
 {
     public class IsEnrolledTo
     {
@@ -13,5 +14,7 @@ namespace DABMandatory.Entities
         [MaxLength(10)]
         public string AU_ID { get; set; }
 
+        public Student Student { get; set; }
+        public Course Course { get; set; }
     }
 }
