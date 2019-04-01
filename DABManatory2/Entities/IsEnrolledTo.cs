@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using DABMandatory2.Entities;
 
-namespace DABMandatory.Entities
+namespace DABMandatory2.Entities
 {
     public class IsEnrolledTo
     {
