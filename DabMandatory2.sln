@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DABManatory2", "DABManatory2\DABManatory2.csproj", "{5B042C13-9E6F-4755-BCF5-16902FB9709B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DABMandatory2", "DABManatory2\DABMandatory2.csproj", "{5B042C13-9E6F-4755-BCF5-16902FB9709B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

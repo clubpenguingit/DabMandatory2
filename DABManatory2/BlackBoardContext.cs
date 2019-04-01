@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 
 
-namespace DABManatory2
+namespace DABMandatory2
 {
     class BlackBoardContext : DbContext
     {
