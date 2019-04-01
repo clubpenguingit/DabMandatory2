@@ -15,5 +15,6 @@ namespace DABMandatory2.Entities
 
         public List<Folder> Folders { get; set; }
         
+        public Course Course { get; set; }
     }
 }
