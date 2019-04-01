@@ -43,6 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Assignments.cs" />
+    <Compile Include="Entities\Calendar.cs" />
+    <Compile Include="Entities\ContentArea.cs" />
+    <Compile Include="Entities\Course.cs" />
+    <Compile Include="Entities\CourseContent.cs" />
+    <Compile Include="Entities\CourseResponsible.cs" />
+    <Compile Include="Entities\Deadlines.cs" />
+    <Compile Include="Entities\Folder.cs" />
+    <Compile Include="Entities\HandIns.cs" />
+    <Compile Include="Entities\IsAssignedTo.cs" />
+    <Compile Include="Entities\IsEnrolledTo.cs" />
+    <Compile Include="Entities\LectureDates.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\Teacher.cs" />
+    <Compile Include="Entities\TeachingAssistant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
