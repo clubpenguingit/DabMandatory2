@@ -4,10 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DABMandatory2.EntityConfigurations
 {
-    public class StudentConfiguration
+    public class StudentConfiguration : IEntityTypeConfiguration<Student>
     {
-        class HandInsConfiguration : IEntityTypeConfiguration<Student>
-        {
             public void Configure(EntityTypeBuilder<Student> builder)
             {
                 builder
