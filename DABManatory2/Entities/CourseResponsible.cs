@@ -14,7 +14,7 @@ namespace DABMandatory2.Entities
         public string AU_ID { get; set; }
 
         [MaxLength(10)]
-        public string TeacherID { get; set; }
+        public string Teacher_ID { get; set; }
 
         [MaxLength(15)]
         public string Assistant_Or_Responsible { get; set; }

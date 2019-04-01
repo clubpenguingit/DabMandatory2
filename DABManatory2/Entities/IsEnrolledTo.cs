@@ -8,10 +8,10 @@ namespace DABMandatory.Entities
         public bool ActiveOrPassed { get; set; }
 
         [MaxLength(100)]
-        public string CourseID { get; set; }
+        public string Course_ID { get; set; }
 
         [MaxLength(10)]
-        public string AuID { get; set; }
+        public string AU_ID { get; set; }
 
     }
 }

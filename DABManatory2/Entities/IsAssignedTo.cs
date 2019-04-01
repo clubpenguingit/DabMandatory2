@@ -5,9 +5,9 @@ namespace DABMandatory2.Entities
     public class IsAssignedTo
     {
         [MaxLength(100)]
-        public string CourseID { get; set; }
+        public string Course_ID { get; set; }
 
         [MaxLength(10)]
-        public string TeacherID { get; set; }
+        public string Teacher_ID { get; set; }
     }
 }

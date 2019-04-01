@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BlackBoard.Entities
+namespace DABMandatory2.Entities
 {
     public class Course
     {
         [MaxLength(100)]
-        public string CourseID { get; set; }
+        public string Course_ID { get; set; }
     }
 }

@@ -6,10 +6,10 @@ namespace DABMandatory2.Entities
     public class LectureDates
     {
         [MaxLength(10)]
-        public string CalendarID { get; set; }
+        public string Calendar_ID { get; set; }
 
         [MaxLength(100)]
-        public string CourseID { get; set; }
+        public string Course_ID { get; set; }
 
         public DateTime Lectures { get; set; }
     }
