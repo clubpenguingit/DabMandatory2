@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using DABMandatory.Entities;
+using DABMandatory2.Entities;
 
 namespace DABMandatory2.Entities
 {
@@ -8,6 +8,7 @@ namespace DABMandatory2.Entities
     {
         [MaxLength(100)]
         public string Course_ID { get; set; }
+        public List<Assignments> Assignments { get; set; }
 
         public List<IsEnrolledTo> Enrollments { get; set; }
     }
