@@ -13,7 +13,7 @@ namespace DABMandatory2.Entities
         public DateTime Birthday { get; set; }
 
         [MaxLength(10)]
-        public string AuID { get; set; }
+        public string AU_ID { get; set; }
 
         [Required]
         public DateTime GraduationDate { get; set; }

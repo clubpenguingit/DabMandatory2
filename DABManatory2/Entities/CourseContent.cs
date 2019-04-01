@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace BlackBoard.Entities
+namespace DABMandatory2.Entities
 {
     public class CourseContent
     {
