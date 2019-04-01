@@ -14,5 +14,6 @@ namespace DABMandatory2.Entities
         public Calendar Calendar { get; set; }
         public List<IsAssignedTo> IsAssignedTos { get; set; }
         public List<HandIns> HandIns { get; set; }
+        public List<Deadlines> Deadlines { get; set; }
     }
 }

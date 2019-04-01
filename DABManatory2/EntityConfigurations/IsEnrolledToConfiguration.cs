@@ -4,10 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DABMandatory2.EntityConfigurations
 {
-    public class IsEnrolledToConfiguration
+    public class IsEnrolledToConfiguration : IEntityTypeConfiguration<IsEnrolledTo>
     {
-        class HandInsConfiguration : IEntityTypeConfiguration<IsEnrolledTo>
-        {
             public void Configure(EntityTypeBuilder<IsEnrolledTo> builder)
             {
                 builder
@@ -25,6 +23,5 @@ namespace DABMandatory2.EntityConfigurations
                     .HasForeignKey(c => c.Course_ID)
                     .OnDelete(DeleteBehavior.Cascade);
             }
-        }
     }
 }

@@ -9,7 +9,7 @@ namespace DABMandatory2.EntityConfigurations
         public void Configure(EntityTypeBuilder<LectureDates> builder)
         {
             builder.HasKey(c => new {c.Calendar_ID, c.Course_ID});
-
+            
         }
     }
 }
