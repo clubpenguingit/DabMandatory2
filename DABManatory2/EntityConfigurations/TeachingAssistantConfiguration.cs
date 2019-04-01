@@ -19,7 +19,7 @@ namespace DABMandatory2.EntityConfigurations
                 .WithOne(ta => ta.TeachingAssistant)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey<TeacherConfiguration>(t => t.Teacher_ID);
+                .HasForeignKey<Teacher>(t => t.Teacher_ID);
 
             builder
                 .Property(t => t.Assistant_Or_Responsible)
