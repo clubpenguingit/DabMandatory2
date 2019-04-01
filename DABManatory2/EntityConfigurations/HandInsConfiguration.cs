@@ -16,6 +16,17 @@ namespace DABMandatory2.EntityConfigurations
 
             //How to do this other stuff
             //FOREIGN KEY(Calendar_ID, Course_ID) REFERENCES Calendar ON DELETE CASCADE ON UPDATE CASCADE
+
+            builder
+                .HasOne(a => a.Calendar)
+                .WithMany(a => a.Handins)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasForeignKey(a => a.Calendar_ID);
+            builder
+                .HasOne(a => a.Course)
+                .WithMany(a => a.HandIns)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasForeignKey(a => a.Course_ID);
         }
     }
 }

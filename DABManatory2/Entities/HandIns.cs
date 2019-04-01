@@ -12,5 +12,6 @@ namespace DABMandatory2.Entities
         public DateTime HandinDate { get; set; }
 
         public Calendar Calendar { get; set; }
+        public Course Course { get; set; }
     }
 }
