@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using BlackBoard.Entities;
+using DABMandatory2.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -19,7 +19,7 @@ namespace DABMandatory2.EntityConfigurations
                 .WithOne(ta => ta.TeachingAssistant)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey<Teacher>(t => t.TeacherID);
+                .HasForeignKey<TeacherConfiguration>(t => t.Teacher_ID);
 
             builder
                 .Property(t => t.Assistant_Or_Responsible)
