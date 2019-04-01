@@ -13,9 +13,6 @@ namespace DABMandatory2.EntityConfigurations
         {
             builder
                 .HasKey(key => new { key.Course_ID, key.Content_ID, key.Folder_ID });
-
-
-            //FOREIGN KEY(Course_ID, Content_ID) REFERENCES CourseContent ON DELETE CASCADE ON UPDATE CASCADE
             builder
                 .HasOne(a => a.CourseContent)
                 .WithMany(a =>a.Folders)
