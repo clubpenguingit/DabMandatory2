@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Configuration;
+using DABMandatory2.Entities;
 using DABMandatory2.EntityConfigurations;
 
 
