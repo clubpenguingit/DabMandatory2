@@ -9,6 +9,9 @@ namespace BlackBoard.Entities
 
         [MaxLength(15)]
         public string AssistantOrResponsible { get; set; }
+
+        public TeachingAssistant TeachingAssistant { get; set; }
+        public CourseResponsible CourseResponsible { get; set; }
     }
 
 }
