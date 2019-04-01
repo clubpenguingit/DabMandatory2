@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using DABMandatory2.Entities;
 
 namespace DABMandatory2.Entities
@@ -15,5 +16,7 @@ namespace DABMandatory2.Entities
 
         public TeachingAssistant TeachingAssistant { get; set; }
         public CourseResponsible CourseResponsible { get; set; }
+
+        public List<IsAssignedTo> IsAssignedTos { get; set; }
     }
 }

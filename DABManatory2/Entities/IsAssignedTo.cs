@@ -9,5 +9,7 @@ namespace DABMandatory2.Entities
 
         [MaxLength(10)]
         public string Teacher_ID { get; set; }
+        
+        public Teacher Teacher { get; set; }
     }
 }
