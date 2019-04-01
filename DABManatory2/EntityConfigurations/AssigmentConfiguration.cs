@@ -19,13 +19,13 @@ namespace DABMandatory2.EntityConfigurations
             builder.HasOne(a => a.Student)
                 .WithMany(s => s.Assignments)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey(a => a.AU_ID);
+                .HasForeignKey(s => s.AU_ID);
 
             // Foreign Key Course
             builder.HasOne(a => a.Course)
                 .WithMany(c => c.Assignments)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey(a => a.Course_ID);
+                .HasForeignKey(c => c.Course_ID);
 
             // Foreign Key Teacher
             builder.HasOne(a => a.Teacher)
