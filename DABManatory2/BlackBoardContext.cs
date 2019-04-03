@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using DABMandatory2.Entities;
-using DABMandatory2.EntityConfigurations;
+using DABMandatory2.EntityConfiguration;
 
 
 namespace DABMandatory2
@@ -27,7 +27,7 @@ namespace DABMandatory2
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Data Source=DESKTOP-QND3SFP/MSSQLSERVER03;Initial Catalog=PRJTestDatabase2;Integrated Security=True";
+            var connectionString = "Data Source=DESKTOP-QND3SFP\\MSSQLSERVER03;Initial Catalog=DABMandatory2;Integrated Security=True";
             optionsBuilder.UseLazyLoadingProxies().UseSqlServer(connectionString);
             
             //optionsBuilder.UseSqlServer(
@@ -44,12 +44,12 @@ namespace DABMandatory2
             modelbuilder.ApplyConfiguration(new CourseConfiguration());
             modelbuilder.ApplyConfiguration(new CourseContentConfiguration());
             modelbuilder.ApplyConfiguration(new CourseResponsibleConfiguration());
-            modelbuilder.ApplyConfiguration(new DeadlinesConfiguration());
+            modelbuilder.ApplyConfiguration(new DeadlineConfiguration());
             modelbuilder.ApplyConfiguration(new FolderConfiguration());
-            modelbuilder.ApplyConfiguration(new HandInsConfiguration());
+            modelbuilder.ApplyConfiguration(new HandinConfiguration());
             modelbuilder.ApplyConfiguration(new IsAssignedToConfiguration());
             modelbuilder.ApplyConfiguration(new IsEnrolledToConfiguration());
-            modelbuilder.ApplyConfiguration(new LectureDatesConfiguration());
+            modelbuilder.ApplyConfiguration(new LectureDateConfiguration());
             modelbuilder.ApplyConfiguration(new StudentConfiguration());
             modelbuilder.ApplyConfiguration(new TeacherConfiguration());
             modelbuilder.ApplyConfiguration(new TeachingAssistantConfiguration());

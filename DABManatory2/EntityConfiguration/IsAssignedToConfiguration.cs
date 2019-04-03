@@ -5,26 +5,27 @@ using DABMandatory2.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DABMandatory2.EntityConfigurations
+namespace DABMandatory2.EntityConfiguration
 {
-    class IsAssignedToConfiguration : IEntityTypeConfiguration<IsAssignedTo>
+    public class IsAssignedToConfiguration : IEntityTypeConfiguration<IsAssignedTo>
     {
         public void Configure(EntityTypeBuilder<IsAssignedTo> builder)
         {
+            builder.HasKey(key => new {key.Teacher_ID, key.Course_ID});
+
             builder
                 .HasOne(t => t.Teacher)
                 .WithMany(t => t.IsAssignedTos)
                 .IsRequired()
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(t => t.Teacher_ID);
 
             builder
-                .HasOne(c => c.Course)
-                .WithMany(b => b.IsAssignedTos)
+                .HasOne(t => t.Course)
+                .WithMany(t => t.IsAssignedTos)
                 .IsRequired()
-                .HasForeignKey(c => c.Course_ID);
-
-            builder
-                .HasKey(key => new {key.Course_ID, key.Teacher_ID});
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasForeignKey(t => t.Course_ID);
         }
     }
 }

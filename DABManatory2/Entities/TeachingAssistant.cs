@@ -12,11 +12,13 @@ namespace DABMandatory2.Entities
         [Required]
         public DateTime Birthday { get; set; }
 
+        [MaxLength(10)]
         public string AU_ID { get; set; }
 
+        [MaxLength(10)]
         public string Teacher_ID { get; set; }
 
-        
+        [MaxLength(15)]
         public string Assistant_Or_Responsible { get; set; }
         //Assistant_OR_Responsible NVARCHAR(15) DEFAULT 'Assistant' NOT NULL
 

@@ -8,7 +8,6 @@ namespace DABMandatory2.Entities
         // Composite key not made here. 
 
         [Required]
-        // TODO: Må kun være  -03, 00, 02, 04, 7, 10 & 12[Range()]
         public int Grade { get; set; }
 
         [Required]

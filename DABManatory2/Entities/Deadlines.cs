@@ -13,6 +13,5 @@ namespace DABMandatory2.Entities
         public DateTime DeadlineDate { get; set; }
 
         public virtual Calendar Calendar { get; set; }
-        public virtual Course Course { get; set; }
     }
 }

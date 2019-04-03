@@ -5,25 +5,23 @@ using DABMandatory2.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DABMandatory2.EntityConfigurations
+namespace DABMandatory2.EntityConfiguration
 {
-    class CourseResponsibleConfiguration : IEntityTypeConfiguration<CourseResponsible>
+    public class CourseResponsibleConfiguration : IEntityTypeConfiguration<CourseResponsible>
     {
         public void Configure(EntityTypeBuilder<CourseResponsible> builder)
         {
-            builder
-                .HasKey(key => new {key.Teacher_ID, key.AU_ID});
+            builder.HasKey(key => new {key.AU_ID, key.Teacher_ID});
 
             builder
                 .HasOne(t => t.Teacher)
-                .WithOne(c => c.CourseResponsible)
+                .WithOne(t => t.CourseResponsible)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey<Teacher>(c => c.Teacher_ID);
+                .HasForeignKey<Teacher>();
 
             builder
                 .Property(t => t.Assistant_Or_Responsible)
                 .HasDefaultValue("Responsible");
-
         }
     }
 }

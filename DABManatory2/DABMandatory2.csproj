@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190401135009_V1.1.cs" />
+    <Compile Remove="Migrations\20190401135703_V1.2.cs" />
+    <Compile Remove="Migrations\20190403093843_CompleteOverhaul.cs" />
+    <Compile Remove="Migrations\20190403095705_Version2.1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.3" />
