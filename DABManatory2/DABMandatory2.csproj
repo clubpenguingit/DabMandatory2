@@ -9,6 +9,7 @@
     <Compile Remove="Migrations\20190401135009_V1.1.cs" />
     <Compile Remove="Migrations\20190401135703_V1.2.cs" />
     <Compile Remove="Migrations\20190403093843_CompleteOverhaul.cs" />
+    <Compile Remove="Migrations\20190403093922_Version2.0.cs" />
     <Compile Remove="Migrations\20190403095705_Version2.1.cs" />
   </ItemGroup>
 

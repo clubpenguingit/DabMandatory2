@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DABMandatory2.Migrations
 {
     [DbContext(typeof(BlackBoardContext))]
-    [Migration("20190403093922_Version2.0")]
-    partial class Version20
+    [Migration("20190403100428_Version2.0-GiantOverhaul")]
+    partial class Version20GiantOverhaul
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

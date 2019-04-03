@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DABMandatory2.Migrations
 {
-    public partial class Version20 : Migration
+    public partial class Version20GiantOverhaul : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
