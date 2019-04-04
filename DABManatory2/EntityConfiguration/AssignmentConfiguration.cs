@@ -17,7 +17,7 @@ namespace DABMandatory2.EntityConfiguration
                 .HasOne(a => a.Teacher)
                 .WithOne(a => a.Assignments)
                 .OnDelete(DeleteBehavior.Restrict)
-                .HasForeignKey<Teacher>(); 
+                .HasForeignKey<Assignments>(); 
 
             builder
                 .HasOne(a => a.Course)
@@ -30,6 +30,7 @@ namespace DABMandatory2.EntityConfiguration
                 .WithMany(a => a.Assignments)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(a => a.AU_ID);
+
         }
     }
 }

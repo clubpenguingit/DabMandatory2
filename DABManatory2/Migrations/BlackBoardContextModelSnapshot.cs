@@ -45,6 +45,10 @@ namespace DABMandatory2.Migrations
 
                     b.HasIndex("Course_ID");
 
+                    b.HasIndex("Teacher_ID")
+                        .IsUnique()
+                        .HasFilter("[Teacher_ID] IS NOT NULL");
+
                     b.ToTable("Assignments");
                 });
 
@@ -57,6 +61,9 @@ namespace DABMandatory2.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Calendar_ID", "Course_ID");
+
+                    b.HasIndex("Course_ID")
+                        .IsUnique();
 
                     b.ToTable("Calendars");
                 });
@@ -100,24 +107,7 @@ namespace DABMandatory2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(100);
 
-                    b.Property<string>("CalendarCourse_ID")
-                        .IsRequired();
-
-                    b.Property<string>("Calendar_ID")
-                        .IsRequired();
-
-                    b.Property<string>("CourseContentContent_ID");
-
-                    b.Property<string>("CourseContentCourse_ID");
-
                     b.HasKey("Course_ID");
-
-                    b.HasIndex("Calendar_ID", "CalendarCourse_ID")
-                        .IsUnique();
-
-                    b.HasIndex("CourseContentContent_ID", "CourseContentCourse_ID")
-                        .IsUnique()
-                        .HasFilter("[CourseContentContent_ID] IS NOT NULL AND [CourseContentCourse_ID] IS NOT NULL");
 
                     b.ToTable("Courses");
                 });
@@ -131,6 +121,9 @@ namespace DABMandatory2.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Content_ID", "Course_ID");
+
+                    b.HasIndex("Course_ID")
+                        .IsUnique();
 
                     b.ToTable("CourseContents");
                 });
@@ -156,6 +149,9 @@ namespace DABMandatory2.Migrations
 
                     b.HasKey("AU_ID", "Teacher_ID");
 
+                    b.HasIndex("Teacher_ID")
+                        .IsUnique();
+
                     b.ToTable("CourseResponsibles");
                 });
 
@@ -170,8 +166,6 @@ namespace DABMandatory2.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("DeadlineDate", "Calendar_ID", "Course_ID");
-
-                    b.HasIndex("Course_ID");
 
                     b.HasIndex("Calendar_ID", "Course_ID");
 
@@ -207,8 +201,6 @@ namespace DABMandatory2.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("HandinDate", "Calendar_ID", "Course_ID");
-
-                    b.HasIndex("Course_ID");
 
                     b.HasIndex("Calendar_ID", "Course_ID");
 
@@ -291,35 +283,11 @@ namespace DABMandatory2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(10);
 
-                    b.Property<string>("AssignmentsAU_ID");
-
-                    b.Property<string>("AssignmentsAssignment_ID");
-
                     b.Property<string>("AssistantOrResponsible")
                         .IsRequired()
                         .HasMaxLength(15);
 
-                    b.Property<string>("CourseResponsibleAU_ID");
-
-                    b.Property<string>("CourseResponsibleTeacher_ID");
-
-                    b.Property<string>("TeachingAssistantAU_ID");
-
-                    b.Property<string>("TeachingAssistantTeacher_ID");
-
                     b.HasKey("Teacher_ID");
-
-                    b.HasIndex("AssignmentsAU_ID", "AssignmentsAssignment_ID")
-                        .IsUnique()
-                        .HasFilter("[AssignmentsAU_ID] IS NOT NULL AND [AssignmentsAssignment_ID] IS NOT NULL");
-
-                    b.HasIndex("CourseResponsibleAU_ID", "CourseResponsibleTeacher_ID")
-                        .IsUnique()
-                        .HasFilter("[CourseResponsibleAU_ID] IS NOT NULL AND [CourseResponsibleTeacher_ID] IS NOT NULL");
-
-                    b.HasIndex("TeachingAssistantAU_ID", "TeachingAssistantTeacher_ID")
-                        .IsUnique()
-                        .HasFilter("[TeachingAssistantAU_ID] IS NOT NULL AND [TeachingAssistantTeacher_ID] IS NOT NULL");
 
                     b.ToTable("Teachers");
                 });
@@ -345,6 +313,9 @@ namespace DABMandatory2.Migrations
 
                     b.HasKey("AU_ID", "Teacher_ID");
 
+                    b.HasIndex("Teacher_ID")
+                        .IsUnique();
+
                     b.ToTable("TeachingAssistants");
                 });
 
@@ -359,6 +330,19 @@ namespace DABMandatory2.Migrations
                         .WithMany("Assignments")
                         .HasForeignKey("Course_ID")
                         .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DABMandatory2.Entities.Teacher", "Teacher")
+                        .WithOne("Assignments")
+                        .HasForeignKey("DABMandatory2.Entities.Assignments", "Teacher_ID")
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("DABMandatory2.Entities.Calendar", b =>
+                {
+                    b.HasOne("DABMandatory2.Entities.Course", "Course")
+                        .WithOne("Calendar")
+                        .HasForeignKey("DABMandatory2.Entities.Calendar", "Course_ID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DABMandatory2.Entities.ContentArea", b =>
@@ -369,26 +353,24 @@ namespace DABMandatory2.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("DABMandatory2.Entities.Course", b =>
+            modelBuilder.Entity("DABMandatory2.Entities.CourseContent", b =>
                 {
-                    b.HasOne("DABMandatory2.Entities.Calendar", "Calendar")
-                        .WithOne("Course")
-                        .HasForeignKey("DABMandatory2.Entities.Course", "Calendar_ID", "CalendarCourse_ID")
+                    b.HasOne("DABMandatory2.Entities.Course", "Course")
+                        .WithOne("CourseContent")
+                        .HasForeignKey("DABMandatory2.Entities.CourseContent", "Course_ID")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
 
-                    b.HasOne("DABMandatory2.Entities.CourseContent", "CourseContent")
-                        .WithOne("Course")
-                        .HasForeignKey("DABMandatory2.Entities.Course", "CourseContentContent_ID", "CourseContentCourse_ID")
+            modelBuilder.Entity("DABMandatory2.Entities.CourseResponsible", b =>
+                {
+                    b.HasOne("DABMandatory2.Entities.Teacher", "Teacher")
+                        .WithOne("CourseResponsible")
+                        .HasForeignKey("DABMandatory2.Entities.CourseResponsible", "Teacher_ID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("DABMandatory2.Entities.Deadlines", b =>
                 {
-                    b.HasOne("DABMandatory2.Entities.Course")
-                        .WithMany("Deadlines")
-                        .HasForeignKey("Course_ID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("DABMandatory2.Entities.Calendar", "Calendar")
                         .WithMany("Deadlines")
                         .HasForeignKey("Calendar_ID", "Course_ID")
@@ -405,11 +387,6 @@ namespace DABMandatory2.Migrations
 
             modelBuilder.Entity("DABMandatory2.Entities.HandIns", b =>
                 {
-                    b.HasOne("DABMandatory2.Entities.Course")
-                        .WithMany("HandIns")
-                        .HasForeignKey("Course_ID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("DABMandatory2.Entities.Calendar", "Calendar")
                         .WithMany("Handins")
                         .HasForeignKey("Calendar_ID", "Course_ID")
@@ -450,21 +427,11 @@ namespace DABMandatory2.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("DABMandatory2.Entities.Teacher", b =>
+            modelBuilder.Entity("DABMandatory2.Entities.TeachingAssistant", b =>
                 {
-                    b.HasOne("DABMandatory2.Entities.Assignments", "Assignments")
-                        .WithOne("Teacher")
-                        .HasForeignKey("DABMandatory2.Entities.Teacher", "AssignmentsAU_ID", "AssignmentsAssignment_ID")
-                        .OnDelete(DeleteBehavior.Restrict);
-
-                    b.HasOne("DABMandatory2.Entities.CourseResponsible", "CourseResponsible")
-                        .WithOne("Teacher")
-                        .HasForeignKey("DABMandatory2.Entities.Teacher", "CourseResponsibleAU_ID", "CourseResponsibleTeacher_ID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("DABMandatory2.Entities.TeachingAssistant", "TeachingAssistant")
-                        .WithOne("Teacher")
-                        .HasForeignKey("DABMandatory2.Entities.Teacher", "TeachingAssistantAU_ID", "TeachingAssistantTeacher_ID")
+                    b.HasOne("DABMandatory2.Entities.Teacher", "Teacher")
+                        .WithOne("TeachingAssistant")
+                        .HasForeignKey("DABMandatory2.Entities.TeachingAssistant", "Teacher_ID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

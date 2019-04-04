@@ -5,21 +5,21 @@ using System.Text;
 using DABMandatory2.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Calendar = DABMandatory2.Entities.Calendar;
 
 namespace DABMandatory2.EntityConfiguration
 {
     public class CalendarConfiguration : IEntityTypeConfiguration<Entities.Calendar>
     {
-        public void Configure(EntityTypeBuilder<Entities.Calendar> builder)
+        public void Configure(EntityTypeBuilder<Calendar> builder)
         {
             builder.HasKey(key => new {key.Calendar_ID, key.Course_ID});
 
             builder
                 .HasOne(c => c.Course)
                 .WithOne(c => c.Calendar)
-                .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey<Course>();
+                .HasForeignKey<Calendar>();
 
             
         }
