@@ -8,7 +8,7 @@ namespace DABMandatory2.Repository.Implementation
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private BlackBoardContext _context;
+        protected BlackBoardContext _context;
         public Repository(BlackBoardContext blackboardDbContext)
         {
             _context = blackboardDbContext;
