@@ -11,6 +11,12 @@
     <Compile Remove="Migrations\20190403093843_CompleteOverhaul.cs" />
     <Compile Remove="Migrations\20190403093922_Version2.0.cs" />
     <Compile Remove="Migrations\20190403095705_Version2.1.cs" />
+    <Compile Remove="Migrations\20190403100428_Version2.0-GiantOverhaul.cs" />
+    <Compile Remove="Migrations\20190404084947_Test.cs" />
+    <Compile Remove="Migrations\20190404085543_Test.cs" />
+    <Compile Remove="Migrations\20190404090707_Test2.cs" />
+    <Compile Remove="Migrations\20190404091046_Test.cs" />
+    <Compile Remove="Migrations\20190404091150_Test.cs" />
   </ItemGroup>
 
   <ItemGroup>

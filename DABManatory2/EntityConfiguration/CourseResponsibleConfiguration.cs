@@ -17,7 +17,7 @@ namespace DABMandatory2.EntityConfiguration
                 .HasOne(t => t.Teacher)
                 .WithOne(t => t.CourseResponsible)
                 .OnDelete(DeleteBehavior.Cascade)
-                .HasForeignKey<Teacher>();
+                .HasForeignKey<CourseResponsible>();
 
             builder
                 .Property(t => t.Assistant_Or_Responsible)
