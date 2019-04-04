@@ -74,7 +74,7 @@ namespace DABMandatory2
 
         public void PrintStudentAssignments(string studentId, string assignmentId)
         {
-            var assignments = StudentRepository.GetStudentAssignments("589973", "Mandatory 2").ToList();
+            var assignments = StudentRepository.GetStudentAssignments(studentId, assignmentId).ToList();
             if (assignments.Any())
             {
                 Console.WriteLine("Printing Assignment sheet");
@@ -82,7 +82,7 @@ namespace DABMandatory2
                 {
                     Console.WriteLine($"Assignment: {assignment.Assignment_ID}\n" +
                                       $"Student: {assignment.AU_ID}\n" +
-                                      $"Status: {assignment.Passed}" +
+                                      $"Status: {assignment.Passed}\n" +
                                       $"Grade: {assignment.Grade}\n" +
                                       $"Graded by: {assignment.Teacher_ID}");
                 }
@@ -91,7 +91,7 @@ namespace DABMandatory2
 
         public void PrintEnrolledInto(string studentId)
         {
-            var enrolled = StudentRepository.GetEnrolledToByStudentId("589973").ToList();
+            var enrolled = StudentRepository.GetEnrolledToByStudentId(studentId).ToList();
             if (enrolled.Any())
             {
                 Console.WriteLine("Printing Enrolled Sheet");
