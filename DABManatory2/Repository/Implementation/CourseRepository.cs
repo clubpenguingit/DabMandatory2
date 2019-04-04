@@ -11,11 +11,17 @@ namespace DABMandatory2.Repository.Implementation
     {
         public CourseRepository(BlackBoardContext blackBoardContext) : base(blackBoardContext) { }
 
-        public Tuple<IEnumerable<IsEnrolledTo>,IEnumerable<IsAssignedTo>> GetAssignees(Course entity)
+        public Tuple<IEnumerable<IsEnrolledTo>,IEnumerable<IsAssignedTo>> GetAssignees(string id)
         {
-            return new Tuple<IEnumerable<Student>, IEnumerable<IsAssignedTo>>(
-                _context.Set<IsEnrolledTo>().Find(entity).Student,
-                _context.Set<IsAssignedTo>().Find(entity).Teacher);
+            return new Tuple<IEnumerable<IsEnrolledTo>, IEnumerable<IsAssignedTo>>(
+                _context.Set<IsEnrolledTo>().Where(e => e.Course_ID == id).AsEnumerable().ToList(),
+                _context.Set<IsAssignedTo>().Where(a => a.Course_ID == id).AsEnumerable().ToList()
+            );
+        }
+
+        public IEnumerable<CourseContent> GetCourseContent(string id)
+        {
+            return _context.Set<CourseContent>().Where(c => c.Course_ID == id).AsEnumerable().ToList();
         }
 
 
