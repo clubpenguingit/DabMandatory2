@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DABMandatory2;
 using DABMandatory2.Entities;
 using DABMandatory2.Repository.Implementation;
@@ -13,7 +14,7 @@ namespace DABManatory2
             Console.WriteLine("Hello World!");
             var r = new StudentRepository(new BlackBoardContext());
             var yyy = new BlackBoardContext();
-            var asd = r.GetStudentAssignments("123", "1123");
+
 
             return;
             yyy.Calendars.Add(new Calendar(){Calendar_ID = "DABKal",Course = null, Course_ID = "DAB", Deadlines = null, Handins = null, LectureDates = null,});
