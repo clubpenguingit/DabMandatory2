@@ -8,6 +8,8 @@ namespace DABMandatory2.Entities
         [Required]
         public bool ActiveOrPassed { get; set; }
 
+        [Required] public int Grade { get; set; }
+
         [MaxLength(100)]
         public string Course_ID { get; set; }
 
