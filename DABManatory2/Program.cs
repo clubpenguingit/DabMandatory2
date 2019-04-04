@@ -11,6 +11,7 @@ namespace DABManatory2
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Hello World!");
             var r = new StudentRepository(new BlackBoardContext());
             var yyy = new BlackBoardContext();
