@@ -9,9 +9,9 @@ namespace DABMandatory2.Repository.Implementation
     public class Repository<T> : IRepository<T> where T : class
     {
         private BlackBoardContext _context;
-        public Repository(BlackBoardContext blackboarDbContext)
+        public Repository(BlackBoardContext blackboardDbContext)
         {
-            _context = blackboarDbContext;
+            _context = blackboardDbContext;
         }
         public void Add(T entity)
         {
