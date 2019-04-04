@@ -24,8 +24,10 @@ namespace DABMandatory2
         private IRepository<LectureDates> _lecDateRepository;
         private IRepository<TeachingAssistant> _TARepository;
         private IRepository<Teacher> _teacherRepository;
-       
+        private CourseRepository _courseRepository;
 
+        public CourseRepository CourseRepository =>
+            _courseRepository ?? (_courseRepository = new CourseRepository(_bbContext));
         public StudentRepository StudentRepository => 
             _studentRepository ?? (_studentRepository = new StudentRepository(_bbContext));
 
