@@ -22,6 +22,12 @@ namespace DABMandatory2.EntityConfiguration
             builder
                 .Property(t => t.Assistant_Or_Responsible)
                 .HasDefaultValue("Responsible");
+
+            builder.HasData(new CourseResponsible()
+            {
+               AU_ID = "auid", Birthday = new DateTime(2000, 10, 20),
+                Name = "Andy Frækkesen", Teacher = null, Teacher_ID = "Henrik"
+            });
         }
     }
 }

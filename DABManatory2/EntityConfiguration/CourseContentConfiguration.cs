@@ -18,6 +18,8 @@ namespace DABMandatory2.EntityConfiguration
                 .WithOne(c => c.CourseContent)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey<CourseContent>();
+            builder.HasData(new CourseContent()
+                {Content_ID = "contentid", Course_ID = "courseid", Course = null, Folders = null});
         }
     }
 }
