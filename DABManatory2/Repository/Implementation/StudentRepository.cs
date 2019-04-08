@@ -22,10 +22,10 @@ namespace DABMandatory2.Repository.Implementation
             return _context.Set<IsEnrolledTo>().Where(x => x.Student.AU_ID == id);
         }
 
-        public IEnumerable<Assignments> GetStudentAssignments(string studId, string assignmentId)
+        public IEnumerable<Assignments> GetStudentAssignments(string studId, string courseID)
         {
             return _context.Set<Assignments>()
-                    .Where( a => a.AU_ID == studId && a.Assignment_ID == assignmentId)
+                    .Where( a => a.AU_ID == studId && a.Course_ID == courseID)
                     .AsEnumerable().ToList();
         }
 
