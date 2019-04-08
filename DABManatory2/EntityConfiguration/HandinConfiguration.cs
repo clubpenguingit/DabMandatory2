@@ -18,6 +18,11 @@ namespace DABMandatory2.EntityConfiguration
                 .WithMany(h => h.Handins)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(fk => new {fk.Calendar_ID, fk.Course_ID});
+            builder.HasData(new HandIns()
+            {
+                Calendar = null, Calendar_ID = "calendarid", Course_ID = "courseid",
+                HandinDate = new DateTime(2020, 10, 10)
+            });
         }
     }
 }
