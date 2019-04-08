@@ -14,7 +14,7 @@ namespace DABMandatory2.Entities
         [RegularExpression(@"Assistant|Responsible")] 
         public string AssistantOrResponsible { get; set; }
 
-        public virtual Assignments Assignments    { get; set; }
+        public virtual List<Assignments> Assignments    { get; set; }
 
         public virtual TeachingAssistant TeachingAssistant { get; set; }
         public virtual CourseResponsible CourseResponsible { get; set; }

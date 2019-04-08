@@ -23,6 +23,8 @@ namespace DABMandatory2.Repository.Interfaces
         IRepository<Calendar> CalendarRepository { get; }
         IRepository<Assignments> AssignmentRepository { get; }
         StudentRepository StudentRepository { get; }
+
+        CourseRepository CourseRepository { get; }
         // INSERT COURSE REPO HERE
 
         int Complete();

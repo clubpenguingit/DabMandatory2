@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using DABMandatory2.Entities;
 using DABMandatory2.Interfaces;
@@ -24,8 +25,10 @@ namespace DABMandatory2
         private IRepository<LectureDates> _lecDateRepository;
         private IRepository<TeachingAssistant> _TARepository;
         private IRepository<Teacher> _teacherRepository;
-       
+        private CourseRepository _courseRepository;
 
+        public CourseRepository CourseRepository =>
+            _courseRepository ?? (_courseRepository = new CourseRepository(_bbContext));
         public StudentRepository StudentRepository => 
             _studentRepository ?? (_studentRepository = new StudentRepository(_bbContext));
 
@@ -69,7 +72,37 @@ namespace DABMandatory2
             _teacherRepository ?? (_teacherRepository = new Repository<Teacher>(_bbContext));
 
 
+        public void PrintStudentAssignments(string studentId, string assignmentId)
+        {
+            var assignments = StudentRepository.GetStudentAssignments(studentId, assignmentId).ToList();
+            if (assignments.Any())
+            {
+                Console.WriteLine("Printing Assignment sheet");
+                foreach (var assignment in assignments)
+                {
+                    Console.WriteLine($"Assignment: {assignment.Assignment_ID}\n" +
+                                      $"Student: {assignment.AU_ID}\n" +
+                                      $"Status: {assignment.Passed}\n" +
+                                      $"Grade: {assignment.Grade}\n" +
+                                      $"Graded by: {assignment.Teacher_ID}");
+                }
+            }
+        }
 
+        public void PrintEnrolledInto(string studentId)
+        {
+            var enrolled = StudentRepository.GetEnrolledToByStudentId(studentId).ToList();
+            if (enrolled.Any())
+            {
+                Console.WriteLine("Printing Enrolled Sheet");
+                foreach (var isEnrolledTo in enrolled)
+                {
+                    Console.WriteLine($"Student AU-Id is: {isEnrolledTo.AU_ID}\n" +
+                                      $"Passed: {isEnrolledTo.ActiveOrPassed}\n" +
+                                      $"Grade: {isEnrolledTo.Grade}\n");
+                }
+            }
+        }
 
         private BlackBoardContext _bbContext = new BlackBoardContext();
         public void Dispose()

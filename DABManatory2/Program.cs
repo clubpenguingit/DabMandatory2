@@ -16,6 +16,10 @@ namespace DABManatory2
             var r = new StudentRepository(new BlackBoardContext());
             var yyy = new BlackBoardContext();
 
+            var uow = new UnitOfWork();
+          
+            uow.PrintStudentAssignments("589973", "Mandatory 2");
+            
 
             return;
             yyy.Calendars.Add(new Calendar(){Calendar_ID = "DABKal",Course = null, Course_ID = "DAB", Deadlines = null, Handins = null, LectureDates = null,});

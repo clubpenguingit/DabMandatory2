@@ -14,10 +14,10 @@ namespace DABMandatory2.EntityConfiguration
             builder.HasKey(key => new {key.AU_ID, key.Assignment_ID});
 
             builder
-                .HasOne(a => a.Teacher)
-                .WithOne(a => a.Assignments)
+                .HasOne(t=> t.Teacher)
+                .WithMany(t=>t.Assignments)
                 .OnDelete(DeleteBehavior.Restrict)
-                .HasForeignKey<Assignments>(); 
+                .HasForeignKey(a => a.Teacher_ID); 
 
             builder
                 .HasOne(a => a.Course)
