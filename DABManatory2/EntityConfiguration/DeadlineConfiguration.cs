@@ -17,6 +17,11 @@ namespace DABMandatory2.EntityConfiguration
                 .WithMany(d => d.Deadlines)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(c => new {c.Calendar_ID, c.Course_ID});
+            builder.HasData(new Deadlines()
+            {
+                Calendar = null, Calendar_ID = "calendarid", Course_ID = "I4DAB",
+                DeadlineDate = new DateTime(2020, 10, 10)
+            });
         }
     }
 }

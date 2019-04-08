@@ -21,6 +21,7 @@
     <Compile Remove="Migrations\20190404115601_FixedTeacherAssignmentIssues.cs" />
     <Compile Remove="Migrations\20190404120009_Test.cs" />
     <Compile Remove="Migrations\20190404120048_Test.cs" />
+    <Compile Remove="Migrations\20190408093913_DataSeedingAdded.cs" />
   </ItemGroup>
 
   <ItemGroup>

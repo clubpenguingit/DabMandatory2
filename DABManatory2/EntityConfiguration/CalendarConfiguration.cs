@@ -21,7 +21,7 @@ namespace DABMandatory2.EntityConfiguration
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey<Calendar>();
 
-            
+            builder.HasData(new Calendar() {Calendar_ID = "calendarid", Course_ID = "I4DAB"});
         }
     }
 }

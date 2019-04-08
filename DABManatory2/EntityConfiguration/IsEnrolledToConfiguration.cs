@@ -24,6 +24,27 @@ namespace DABMandatory2.EntityConfiguration
                 .WithMany(s => s.Enrollments)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(s => s.AU_ID);
+
+
+            #region Dataseeding
+
+            builder.HasData(new IsEnrolledTo()
+            {
+                ActiveOrPassed = true,
+                AU_ID = "au590761",
+                Course_ID = "I4DAB",
+                Grade = 12,
+            });
+
+            builder.HasData(new IsEnrolledTo()
+            {
+                ActiveOrPassed = true,
+                AU_ID = "au590761",
+                Course_ID = "I4SWT",
+                Grade = 02,
+            });
+
+            #endregion
         }
     }
 }

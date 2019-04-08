@@ -22,6 +22,18 @@ namespace DABMandatory2.EntityConfiguration
             builder
                 .Property(t => t.Assistant_Or_Responsible)
                 .HasDefaultValue("Assistant");
+
+            #region Dataseeding
+
+            builder.HasData(new TeachingAssistant()
+            {
+                AU_ID = "au123456",
+                Birthday = new DateTime(1970, 1, 1),
+                Name = "Troels",
+                Teacher_ID = "Troels",
+            });
+
+            #endregion
         }
     }
 }
