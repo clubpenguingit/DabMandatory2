@@ -20,7 +20,7 @@ namespace DABMandatory2.EntityConfiguration
                 .HasForeignKey(c => new {c.Calendar_ID, c.Course_ID});
             builder.HasData(new LectureDates()
             {
-                Calendar = null, Calendar_ID = "calendarid", Course_ID = "courseid",
+                Calendar = null, Calendar_ID = "calendarid", Course_ID = "I4DAB",
                 Lecture = new DateTime(2021, 10, 10)
             });
         }

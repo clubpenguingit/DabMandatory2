@@ -20,7 +20,7 @@ namespace DABMandatory2.EntityConfiguration
                 .HasForeignKey(fk => new {fk.Content_ID, fk.Course_ID});
             builder.HasData(new Folder()
             {
-                Content_ID = "contentid", ContentAreas = null, Course_ID = "courseid", CourseContent = null,
+                Content_ID = "contentid", ContentAreas = null, Course_ID = "I4DAB", CourseContent = null,
                 Folder_ID = "folderid"
             });
         }

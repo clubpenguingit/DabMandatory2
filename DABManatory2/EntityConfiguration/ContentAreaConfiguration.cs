@@ -20,7 +20,7 @@ namespace DABMandatory2.EntityConfiguration
                 .HasForeignKey(fk => new {fk.Folder_ID, fk.Content_ID, fk.Course_ID});
             builder.HasData(new ContentArea()
             {
-                Content_ID = "contentid", Audio = "audio.wav", ContentArea_ID = "contentareaid", Course_ID = "courseid",
+                Content_ID = "contentid", Audio = "audio.wav", ContentArea_ID = "contentareaid", Course_ID = "I4DAB",
                 Folder = null, Folder_ID = "folderid", Group_Signup = "www.signup.com", Text_Block = "textblock",
                 Video = "video.mp4"
             });

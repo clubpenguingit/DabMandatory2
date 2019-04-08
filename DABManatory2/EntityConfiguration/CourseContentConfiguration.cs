@@ -19,7 +19,7 @@ namespace DABMandatory2.EntityConfiguration
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey<CourseContent>();
             builder.HasData(new CourseContent()
-                {Content_ID = "contentid", Course_ID = "courseid", Course = null, Folders = null});
+                {Content_ID = "contentid", Course_ID = "I4DAB", Course = null, Folders = null});
         }
     }
 }

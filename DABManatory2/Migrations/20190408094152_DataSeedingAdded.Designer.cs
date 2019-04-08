@@ -4,14 +4,16 @@ using DABMandatory2;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DABMandatory2.Migrations
 {
     [DbContext(typeof(BlackBoardContext))]
-    partial class BlackBoardContextModelSnapshot : ModelSnapshot
+    [Migration("20190408094152_DataSeedingAdded")]
+    partial class DataSeedingAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
