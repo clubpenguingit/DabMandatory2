@@ -12,6 +12,22 @@ namespace DABMandatory2.EntityConfiguration
         public void Configure(EntityTypeBuilder<Course> builder)
         {
             builder.HasKey(key => key.Course_ID);
+
+
+            #region Dataseeding
+
+            builder.HasData(new Course()
+            {
+                Course_ID = "I4DAB",
+            });
+
+            builder.HasData(new Course()
+            {
+                Course_ID = "I4SWT",
+            });
+
+
+            #endregion
         }
     }
 }

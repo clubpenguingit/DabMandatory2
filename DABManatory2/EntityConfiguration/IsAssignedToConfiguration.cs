@@ -26,6 +26,23 @@ namespace DABMandatory2.EntityConfiguration
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasForeignKey(t => t.Course_ID);
+
+
+            #region Dataseeding
+
+            builder.HasData(new IsAssignedTo()
+            {
+                Course_ID = "I4DAB",
+                Teacher_ID = "Henrik",
+            });
+
+            builder.HasData(new IsAssignedTo()
+            {
+                Course_ID = "I4SWT",
+                Teacher_ID = "Troels",
+            });
+
+            #endregion
         }
     }
 }
