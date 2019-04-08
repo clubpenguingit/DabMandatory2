@@ -9,9 +9,11 @@ namespace DABMandatory2.Repository.Implementation
 {
     public class CourseRepository : Repository<Course>
     {
-        public CourseRepository(BlackBoardContext blackBoardContext) : base(blackBoardContext) { }
+        public CourseRepository(BlackBoardContext blackBoardContext) : base(blackBoardContext)
+        {
+        }
 
-        public Tuple<IEnumerable<IsEnrolledTo>,IEnumerable<IsAssignedTo>> GetAssignees(string id)
+        public Tuple<IEnumerable<IsEnrolledTo>, IEnumerable<IsAssignedTo>> GetAssignees(string id)
         {
             return new Tuple<IEnumerable<IsEnrolledTo>, IEnumerable<IsAssignedTo>>(
                 _context.Set<IsEnrolledTo>().Where(e => e.Course_ID == id).AsEnumerable().ToList(),
@@ -23,7 +25,5 @@ namespace DABMandatory2.Repository.Implementation
         {
             return _context.Set<CourseContent>().Where(c => c.Course_ID == id).AsEnumerable().ToList();
         }
-
-
     }
 }
