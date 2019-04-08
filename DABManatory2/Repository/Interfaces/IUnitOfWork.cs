@@ -25,7 +25,6 @@ namespace DABMandatory2.Repository.Interfaces
         StudentRepository StudentRepository { get; }
 
         CourseRepository CourseRepository { get; }
-        // INSERT COURSE REPO HERE
 
         int Complete();
     }
