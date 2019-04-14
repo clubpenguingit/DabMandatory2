@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
-using DABMandatory2.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Calendar = DABMandatory2.Entities.Calendar;
 
 namespace DABMandatory2.EntityConfiguration
 {
-    public class CalendarConfiguration : IEntityTypeConfiguration<Entities.Calendar>
+    public class CalendarConfiguration : IEntityTypeConfiguration<Calendar>
     {
         public void Configure(EntityTypeBuilder<Calendar> builder)
         {

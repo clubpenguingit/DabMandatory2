@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using DABMandatory2.Entities;
 
 namespace DABMandatory2.Entities
 {

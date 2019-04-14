@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Linq;
-using System.Runtime.InteropServices;
-using DABMandatory2;
-using DABMandatory2.Entities;
-using DABMandatory2.Repository.Implementation;
-using Microsoft.EntityFrameworkCore.Internal;
 
-namespace DABManatory2
+namespace DABMandatory2
 {
     class Program
     {
@@ -165,14 +159,14 @@ namespace DABManatory2
                             break;
                         }
                     case ConsoleKey.Q:
-                    {
-                        running = false;
-                        Console.Clear();
-                        Console.WriteLine("\nBye!");
-                        Console.ReadLine();
+                        {
+                            running = false;
+                            Console.Clear();
+                            Console.WriteLine("\nBye!");
+                            Console.ReadLine();
 
                             break;
-                    }
+                        }
 
 
 

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using DABMandatory2.Entities;
-using DABMandatory2.Interfaces;
 using DABMandatory2.Repository.Implementation;
 
 namespace DABMandatory2.Repository.Interfaces

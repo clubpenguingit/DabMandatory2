@@ -1,8 +1,7 @@
-﻿using DABMandatory2.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using DABMandatory2.Repository.Interfaces;
 
 namespace DABMandatory2.Repository.Implementation
 {

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Configuration;
 using DABMandatory2.Entities;
 using DABMandatory2.EntityConfiguration;
 
@@ -27,15 +26,10 @@ namespace DABMandatory2
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //var connectionString = "Data Source=DESKTOP-QND3SFP\\MSSQLSERVER03;Initial Catalog=DABMandatory2;Integrated Security=True";
-            var connectionString = "Data Source=DESKTOP-UGIDUH3;Initial Catalog=DAB2Test;Integrated Security=True";
+            var connectionString = "Data Source=DESKTOP-QND3SFP\\MSSQLSERVER03;Initial Catalog=DABMandatory2;Integrated Security=True";
             
             optionsBuilder.UseLazyLoadingProxies().UseSqlServer(connectionString);
             
-            //optionsBuilder.UseSqlServer(
-            //    "Data Source=DESKTOP-UGIDUH3;Initial Catalog=MandatoryDAB2;Integrated Security=True");
-
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)

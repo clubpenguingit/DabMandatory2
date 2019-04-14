@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
-using Castle.DynamicProxy.Generators.Emitters.SimpleAST;
 
-namespace DABMandatory2.Interfaces
+namespace DABMandatory2.Repository.Interfaces
 {
     public interface IRepository<T> where T : class
     {
